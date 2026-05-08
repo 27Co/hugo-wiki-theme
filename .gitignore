@@ -1,0 +1,5 @@
+# remove public folder everywhere
+public/
+
+# remove .lock file
+*.lock

@@ -1,12 +1,17 @@
 baseURL = 'https://example.org/'
 locale = 'en-US'
-title = 'My New Hugo Project'
+title = 'archwiki theme'
 
 [menus]
   [[menus.main]]
     name = 'bio'
     pageRef = '/'
     weight = 10
+
+  [[menus.main]]
+    name = 'projects'
+    pageRef = '/projects'
+    weight = 20
 
 [module]
   [module.hugoVersion]
