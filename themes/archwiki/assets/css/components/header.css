@@ -1,4 +1,47 @@
 header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
+}
+
+/* 1. The Master Header Bar */
+.site-header {
+  display: flex;
+  justify-content: space-between; /* left branding, right menu */
+  align-items: center;            /* centers things in the bar */
+
+  background-color: #333333;      /* grey */
+  padding: 0.75rem 2rem;             /* room inside the bar */
+  border-bottom: 5px solid #1793d1; /* blue line at the bottom */
+}
+
+/* 2. The Logo / Site Title styling */
+.site-branding a {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 3. The Menu Layout (from our previous step) */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem; /* Space between links */
+}
+
+/* 4. The Menu Links (Updated for dark background) */
+.main-nav a {
+  color: #aaaaaa;         /* light gray */
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.2s; /* smoothen hover effect */
+}
+
+/* 5. Hover & Active States */
+.main-nav a:hover,
+.main-nav a.active {
+  color: #ffffff;                   /* pure white on hover */
+  // border-bottom: 2px solid #ffcb05; /* yellow underline */
 }
