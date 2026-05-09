@@ -9,14 +9,29 @@ title = 'archwiki theme'
     weight = 10
 
   [[menus.main]]
+    name = 'news'
+    pageRef = '/news'
+    weight = 20
+
+  [[menus.main]]
     name = 'projects'
     pageRef = '/projects'
-    weight = 20
+    weight = 30
+
+  [[menus.main]]
+    name = 'research'
+    pageRef = '/research'
+    weight = 40
+
+  [[menus.main]]
+    name = 'publications'
+    pageRef = '/publications'
+    weight = 50
 
   [[menus.main]]
     name = 'cv'
     url = '/cv.pdf'
-    weight = 30
+    weight = 60
 
 [module]
   [module.hugoVersion]
