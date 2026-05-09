@@ -13,6 +13,11 @@ title = 'archwiki theme'
     pageRef = '/projects'
     weight = 20
 
+  [[menus.main]]
+    name = 'cv'
+    url = '/cv.pdf'
+    weight = 30
+
 [module]
   [module.hugoVersion]
     extended = false
