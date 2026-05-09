@@ -17,3 +17,55 @@ a {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* master container */
+.homepage-layout {
+  display: flex;
+  gap: 3rem;         /* gap between sidebar and text */
+  margin-top: 2rem;  /* pushes everything down a bit from menu */
+}
+
+/* left sidebar */
+.sidebar {
+  flex: 0 0 250px;
+}
+
+/* circular profile picture */
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* css trick turning square into circle */
+  object-fit: cover;  /* ensure image isn't stretched */
+  margin-bottom: 1rem;
+}
+
+/* 4. sidebar text styling */
+.sidebar h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.sidebar .subtitle {
+  color: #666; /* grey text for the title/affiliation */
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* contact links list */
+.contact-links {
+  list-style: none; /* remove bullet points */
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.contact-links li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0.5rem; /* space the emoji/icon away from the text */
+}
+
+/* 6. The Right Column */
+.main-content {
+  flex: 1; /* tell main text to expand and fill remaining space */
+}

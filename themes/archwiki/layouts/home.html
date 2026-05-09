@@ -1,9 +1,24 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+<div class="homepage-layout">
+  <aside class="sidebar">
+    <img src="/profile.svg" alt="profile picture" class="profile-pic">
+    <h2>Arch Linux</h2>
+    <p class="subtitle">homepage layout<br>at `layouts/home.html`</p>
+    <ul class="contact-links">
+      <li> where </li>
+      <li> email </li>
+    </ul>
+  </aside>
+  <section class="main-content">
+    {{ .Content }}
+    <!--
+    {{ range site.RegularPages }}
+      <section>
+        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        {{ .Summary }}
+      </section>
+    {{ end }}
+    -->
+  </section>
+</div>
 {{ end }}
