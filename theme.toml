@@ -1,0 +1,12 @@
+name = "archwiki-like"
+license = "MIT"
+licenselink = "https://github.com/27Co/hugo-wiki-theme/blob/main/LICENSE"
+description = "A hugo theme inspired by the Arch Linux wiki."
+homepage = "https://github.com/27Co/hugo-wiki-theme"
+tags = ["minimal", "profile", "wiki"]
+features = ["menu", "wiki"]
+min_version = "0.146.0"
+
+[author]
+  name = "27Co"
+  homepage = "https://github.com/27Co"
