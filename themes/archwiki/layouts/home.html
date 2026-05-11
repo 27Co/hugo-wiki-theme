@@ -2,11 +2,14 @@
 <div class="homepage-layout">
   <aside class="sidebar">
     <img src="/profile.svg" alt="profile picture" class="profile-pic">
-    <h2>Arch Linux</h2>
-    <p class="subtitle">homepage layout<br>at <code>layouts/home.html</code></p>
+    <h2>{{ .Params.name }}</h2>
+    <p class="subtitle">{{ .Params.role }}<br>{{ .Params.affiliation }}</p>
     <ul class="contact-links">
-      <li> where </li>
-      <li> email </li>
+      <li>{{ .Params.location }}</li>
+      <li><a href="mailto:{{ .Params.email }}">Email</a></li>
+      <li><a href="https://github.com/{{ .Params.github }}">GitHub</a></li>
+      <li><a href="https://scholar.google.com/citations?user={{ .Params.scholar }}">Google Scholar</a></li>
+      <li><a href="https://www.linkedin.com/in/{{ .Params.linkedin }}">LinkedIn</a></li>
     </ul>
   </aside>
   <section class="main-content">
