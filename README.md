@@ -28,3 +28,13 @@
    ```
 
 5. Modify the content in the `content` directory as needed.
+
+> change `draft = true` to `draft = false` in the front matter of your markdown files
+
+6. Start the Hugo development server:
+
+   ```
+   hugo server
+   ```
+
+> or use `hugo server -D` to include draft content during development.
