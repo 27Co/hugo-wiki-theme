@@ -16,6 +16,7 @@ a {
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 5rem;
 }
 
 /* master container */
@@ -30,6 +31,19 @@ a {
   flex: 0 0 250px;
 }
 
+/* mobile responsive layout */
+@media (max-width: 768px) {
+  .homepage-layout {
+    flex-direction: column; /* stack the sidebar on top of the main text */
+    align-items: center;    /* center the sidebar items on mobile */
+    text-align: center;     /* center the text in the sidebar */
+  }
+
+  .sidebar {
+    flex: auto; /* remove 250px width restriction */
+  }
+}
+
 /* circular profile picture */
 .profile-pic {
   width: 200px;
@@ -39,7 +53,7 @@ a {
   margin-bottom: 1rem;
 }
 
-/* 4. sidebar text styling */
+/* sidebar text styling */
 .sidebar h2 {
   margin: 0 0 0.5rem 0;
   font-size: 1.5rem;
@@ -52,20 +66,18 @@ a {
 }
 
 /* contact links list */
-.contact-links {
+.sidebar .contact-links {
   list-style: none; /* remove bullet points */
   padding: 0;
   margin: 0;
   font-size: 0.9rem;
 }
 
-.contact-links li {
+.sidebar .contact-links li {
   margin-bottom: 0.5rem;
-  display: flex;
-  gap: 0.5rem; /* space the emoji/icon away from the text */
 }
 
-/* 6. The Right Column */
+/* right column */
 .main-content {
   flex: 1; /* tell main text to expand and fill remaining space */
 }
