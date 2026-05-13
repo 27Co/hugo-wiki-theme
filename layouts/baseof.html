@@ -13,5 +13,8 @@
   <footer>
     {{ partial "footer.html" . }}
   </footer>
+  <!-- load assets/js/menu.js -->
+  {{ $menuScript := resources.Get "js/menu.js" }}
+  <script src="{{ $menuScript.RelPermalink }}"></script>
 </body>
 </html>

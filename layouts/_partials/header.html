@@ -1,9 +1,11 @@
 <header class="site-header">
 
   <div class="site-branding">
-    <a href="{{ site.Home.RelPermalink }}">First Name Last Name</a>
+    <a href="{{ site.Home.RelPermalink }}">{{ .Params.name }}</a>
   </div>
 
   {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+
+  <button id="menu-toggle" class="menu-hamburger" aria-label="toggle menu" aria-controls="primary-menu" aria-expanded="false">=</button>
 
 </header>

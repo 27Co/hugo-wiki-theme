@@ -45,3 +45,45 @@ header {
   color: #ffffff;                   /* pure white on hover */
   // border-bottom: 2px solid #ffcb05; /* yellow underline */
 }
+
+.menu-hamburger {
+  display: none; /* hide hamburger on desktop */
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;    /* Allows the menu to drop below the logo/button */
+  }
+
+  .menu-hamburger {
+    display: block;     /* Shows the button on mobile */
+  }
+
+  /* Hide the menu by default on mobile */
+  .main-nav {
+    display: none;
+    width: 100%;        /* force menu to take full width */
+    margin-top: 1rem;
+  }
+
+  /* This is the class our JavaScript adds! */
+  .main-nav.open {
+    display: block;
+  }
+
+  .menu-hamburger.close {
+    display: none;
+  }
+
+  /* stack the links vertically for mobile tap-friendliness */
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
