@@ -9,7 +9,7 @@ body {
 }
 
 a {
-  color: #00e;
+  color: #1793d1;
   text-decoration: none;
 }
 
@@ -75,6 +75,12 @@ a {
 
 .sidebar .contact-links li {
   margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.sidebar .contact-links li a {
+  margin-bottom: 0.5rem;
+  color: #666;
 }
 
 /* right column */
