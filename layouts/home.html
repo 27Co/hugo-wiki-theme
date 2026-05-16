@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="homepage-layout">
   <aside class="sidebar">
-    <img src="/profile.svg" alt="profile picture" class="profile-pic">
+    <img src="/{{ .Params.photo }}" alt="{{ .Params.name }}" class="profile-pic">
     <h2>{{ .Params.name }}</h2>
     <p class="subtitle">{{ .Params.role }}<br>{{ .Params.affiliation }}</p>
     <ul class="contact-links">
