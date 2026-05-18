@@ -4,4 +4,8 @@ draft = true
 title = 'Research'
 +++
 
-research index goes in `content/research/_index.md`
+summary of research goes in `content/research/_index.md`
+
+<!--more-->
+
+details here

@@ -14,6 +14,21 @@
   </aside>
   <section class="main-content">
     {{ .Content }}
+    <!--include summary of Research and News sections-->
+    {{ with .Site.GetPage "section" "research" }}
+      <section>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ .Summary }}
+      </section>
+    {{ end }}
+    {{ with .Site.GetPage "section" "news" }}
+      <section>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ $bullets := findRE `(?m)^[-*]\s+.*` .RawContent }}
+        {{ $recentNews := first 6 $bullets }}
+        {{ delimit $recentNews "\n" | markdownify }}
+      </section>
+    {{ end }}
     <!--
     {{ range site.RegularPages }}
       <section>
