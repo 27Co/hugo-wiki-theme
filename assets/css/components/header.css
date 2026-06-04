@@ -1,89 +1,73 @@
-header {
-}
+#archnavbar {
+    --archnavbar-logo: var(--archlogo-url);
+    --archnavbar-logo-width: 190px;
+    --archnavbar-logo-height: 40px;
 
-/* 1. The Master Header Bar */
-.site-header {
-  display: flex;
-  justify-content: space-between; /* left branding, right menu */
-  align-items: center;            /* centers things in the bar */
+    --archnavbar-font-color: #999;
+    --archnavbar-font-color-hover: white;
+    --archnavbar-font-size: 14px;
+    --archnavbar-font-family: sans-serif;
 
-  background-color: #333333;      /* grey */
-  padding: 0.75rem 2rem;             /* room inside the bar */
-  border-bottom: 5px solid #1793d1; /* blue line at the bottom */
-}
+    --archnavbar-background-color: #333;
+    --archnavbar-border: 5px solid var(--archlinux-blue);
 
-/* 2. The Logo / Site Title styling */
-.site-branding a {
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-}
+    background: var(--archnavbar-background-color) none repeat scroll 0 0 !important;
+    border-bottom: var(--archnavbar-border) !important;
+    min-height: var(--archnavbar-logo-height) !important;
+    padding: 10px 15px !important;
+    box-sizing: unset;
 
-/* 3. The Menu Layout (from our previous step) */
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 2rem; /* Space between links */
-}
+    #logo {
+        background: rgba(0, 0, 0, 0) var(--archnavbar-logo) no-repeat scroll 0 0 !important;
+        background-size: 100% !important;
+        height: var(--archnavbar-logo-height) !important;
+        width: var(--archnavbar-logo-width) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        float: left !important;
 
-/* 4. The Menu Links (Updated for dark background) */
-.main-nav a {
-  color: #aaaaaa;         /* light gray */
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.5rem 0;
-  transition: color 0.2s; /* smoothen hover effect */
-}
+        & a {
+            display: block !important;
+            height: var(--archnavbar-logo-height) !important;
+            width: var(--archnavbar-logo-width) !important;
+            text-indent: -9999px !important;
+        }
+    }
 
-/* 5. Hover & Active States */
-.main-nav a:hover,
-.main-nav a.active {
-  color: #ffffff;                   /* pure white on hover */
-  // border-bottom: 2px solid #ffcb05; /* yellow underline */
-}
+    & #archnavbarlist li a.active {
+        color: var(--archnavbar-font-color-hover);
+    }
 
-.menu-hamburger {
-  display: none; /* hide hamburger on desktop */
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 2rem;
-  cursor: pointer;
-}
+    & #archnavbarlist li a {
+        color: var(--archnavbar-font-color);
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-@media (max-width: 768px) {
-  .site-header {
-    flex-wrap: wrap;    /* Allows the menu to drop below the logo/button */
-  }
+    & ul {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        font-size: 0;
+        letter-spacing: 0;
 
-  .menu-hamburger {
-    display: block;     /* Shows the button on mobile */
-  }
+        & li {
+            display: inline-block;
+            font-size: var(--archnavbar-font-size);
+            font-family: var(--archnavbar-font-family) !important;
+            line-height: 1.4;
+            letter-spacing: 0;
+            padding-top: 14px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin: 0;
 
-  /* Hide the menu by default on mobile */
-  .main-nav {
-    display: none;
-    width: 100%;        /* force menu to take full width */
-    margin-top: 1rem;
-  }
-
-  /* This is the class our JavaScript adds! */
-  .main-nav.open {
-    display: block;
-  }
-
-  .menu-hamburger.close {
-    display: none;
-  }
-
-  /* stack the links vertically for mobile tap-friendliness */
-  .main-nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
+            & a:hover {
+                color: var(--archnavbar-font-color-hover) !important;
+                text-decoration: underline !important;
+            }
+        }
+    }
 }

@@ -1,8 +1,11 @@
-footer {
-  border-top: 1px solid #aaa;
-  font-size: 0.75rem;
-  color: #aaa;
-  background-color: #eee;
-  padding: 2rem 5rem;
-  margin-top: 2rem;
+#footer {
+    clear: both;
+    margin: 2em 0 1em;
 }
+
+    #footer p {
+        margin: 0;
+        text-align: center;
+        font-size: 11px;
+    }
+

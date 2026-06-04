@@ -1,9 +1,16 @@
+{{- $logoURL := (site.Params.logoURL | default "archlogo.svg") | absURL -}}
+{{- $archblue := site.Params.archlinuxBlue | default "#1793d1" -}}
 {{- with resources.Get "css/main.css" }}
   {{- $opts := dict
     "minify" (cond hugo.IsDevelopment false true)
     "sourceMap" (cond hugo.IsDevelopment "linked" "none")
   }}
   {{- with . | css.Build $opts }}
+    <style>:root { --archlogo-url: url("{{ $logoURL }}"); }</style>
+    <style>:root {
+        --archlogo-url: url("{{ $logoURL }}");
+        --archlinux-blue: {{ $archblue }};
+    }</style>
     {{- if hugo.IsDevelopment }}
       <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{- else }}

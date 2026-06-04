@@ -1,93 +1,250 @@
 @import "components/header.css";
 @import "components/footer.css";
 
-body {
-  color: #222;
-  font-family: sans-serif;
-  line-height: 1.5;
-  margin: 0rem;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* ensure body takes full viewport height */
-}
-
-a {
-  color: #1793d1;
-  text-decoration: none;
-}
-
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5rem;
-  flex: 1; /* allow wrapper to grow and fill available space */
-}
-
-/* master container */
-.homepage-layout {
-  display: flex;
-  gap: 3rem;         /* gap between sidebar and text */
-  margin-top: 2rem;  /* pushes everything down a bit from menu */
-}
-
-/* left sidebar */
-.sidebar {
-  flex: 0 0 250px;
-}
-
-/* mobile responsive layout */
-@media (max-width: 768px) {
-  .homepage-layout {
-    flex-direction: column; /* stack the sidebar on top of the main text */
-    align-items: center;    /* center the sidebar items on mobile */
-    text-align: center;     /* center the text in the sidebar */
-  }
-
-  .sidebar {
-    flex: auto; /* remove 250px width restriction */
-  }
-}
-
 /* circular profile picture */
 .profile-pic {
   width: 200px;
   height: 200px;
   border-radius: 50%; /* css trick turning square into circle */
   object-fit: cover;  /* ensure image isn't stretched */
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-/* sidebar text styling */
-.sidebar h2 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
+/* below from archlinux homepage css */
+
+/*
+ * Font sizing based on 16px browser defaults (use em):
+ *   14px = 0.875em
+ *   13px = 0.812em
+ *   12px = 0.75em
+ *   11px = 0.6875em
+ */
+
+/* simple reset */
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
 }
 
-.sidebar .subtitle {
-  color: #666; /* grey text for the title/affiliation */
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+/* general styling */
+body {
+    min-width: 650px;
+    background: #f6f9fc;
+    color: #222;
+    font: normal 100% sans-serif;
+    text-align: center;
 }
 
-/* contact links list */
-.sidebar .contact-links {
-  list-style: none; /* remove bullet points */
-  padding: 0;
-  margin: 0;
-  font-size: 0.9rem;
+p {
+    margin: .33em 0 1em;
 }
 
-.sidebar .contact-links li {
-  margin-bottom: 0.5rem;
-  color: #666;
+ol,
+ul {
+    margin-bottom: 1em;
+    padding-left: 2em;
 }
 
-.sidebar .contact-links li a {
-  margin-bottom: 0.5rem;
-  color: #666;
+    ul {
+        list-style: square;
+    }
+
+code {
+    font-family: monospace, monospace;
+    background: #ffd;
+    padding: 0.15em 0.25em;
 }
 
-/* right column */
-.main-content {
-  flex: 1; /* tell main text to expand and fill remaining space */
+pre {
+    font-family: monospace, monospace;
+    border: 1px solid #bdb;
+    background: #dfd;
+    padding: 0.5em;
+    margin: 1em;
 }
+
+    pre code {
+        display: block;
+        background: none;
+        overflow: auto;
+    }
+
+blockquote {
+    margin: 1.5em 2em;
+}
+
+input {
+    vertical-align: middle;
+}
+
+select[multiple] {
+    padding: 1px 0;
+}
+
+    select[multiple] option {
+        padding: 0 0.5em 0 0.3em;
+    }
+
+input[type=submit] {
+    padding: 0 0.6em;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #888;
+}
+
+img {
+    border: 0;
+}
+
+/* scale fonts down to a sane default (16 * .812 = 13px) */
+#content {
+    font-size: 0.812em;
+}
+
+/* link style */
+a {
+    text-decoration: none;
+}
+
+    a:link,
+    a:visited,
+    th a:visited {
+        color: #08c;
+    }
+
+    a:hover,
+    a:focus,
+    a:visited,
+    a:visited:hover {
+        color: #08c;
+        text-decoration: underline;
+    }
+
+/* special anchor elements */
+a.headerlink {
+    visibility: hidden;
+    padding-left: 0.5em;
+}
+
+h3:hover > a.headerlink {
+    visibility: visible;
+}
+
+/* headings */
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #888;
+}
+
+h3 {
+    font-size: 1.25em;
+    margin-top: .5em;
+}
+
+h4 {
+    font-size: 1.15em;
+    margin-top: 1em;
+}
+
+h5 {
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+/* general layout */
+#content {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#content-right-wrapper {
+    float: left;
+    width: 100%; /* req to keep content above sidebar in source code */
+}
+
+#content-right {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 400px;
+    margin-right: 100px;
+}
+
+#content-left {
+    float: left;
+    width: 400px;
+    margin-left: -100%;
+    text-align: center;
+}
+
+#content-left h2 {
+    border-bottom: none;
+}
+
+#content-left ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+div.box {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding: 0.65em;
+    background: #ecf2f5;
+    border: 1px solid #bcd;
+}
+
+/* alignment */
+div.center,
+table.center,
+img.center {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.center,
+td.center,
+th.center {
+    text-align: center;
+}
+
+/* home: arrowed headings */
+h3.arrowed-heading {
+    width: fit-content;
+}
+
+h3.arrowed-heading a {
+    display: block;
+    background: #1794D1;
+    font-size: 1em;
+    padding: 2px 10px;
+    color: white;
+    width: fit-content;
+}
+
+span.arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #1794D1;
+    margin: 0 auto;
+    font-size: 0;
+    line-height: 0px;
+}
+

@@ -1,6 +1,43 @@
 {{ define "main" }}
-<div class="homepage-layout">
-  <aside class="sidebar">
+
+<div id="content">
+  <div id="content-right-wrapper">
+    <div id="content-right">
+      <div id="intro" class="box">
+        {{ .Content }}
+      </div>
+      <!--include summary of Research and News sections-->
+      {{ with .Site.GetPage "section" "research" }}
+        <section>
+          <h3 class="arrowed-heading">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              <span class="arrow"></span>
+          </h3>
+          {{ .Summary }}
+        </section>
+      {{ end }}
+      {{ with .Site.GetPage "section" "news" }}
+        <section>
+          <h3 class="arrowed-heading">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              <span class="arrow"></span>
+          </h3>
+          {{ $bullets := findRE `(?m)^[-*]\s+.*` .RawContent }}
+          {{ $recentNews := first 6 $bullets }}
+          {{ delimit $recentNews "\n" | markdownify }}
+        </section>
+      {{ end }}
+      <!--
+      {{ range site.RegularPages }}
+        <section>
+          <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+          {{ .Summary }}
+        </section>
+      {{ end }}
+      -->
+    </div>
+  </div>
+  <div id="content-left">
     <img src="/{{ .Params.photo }}" alt="{{ .Params.name }}" class="profile-pic">
     <h2>{{ .Params.name }}</h2>
     <p class="subtitle">{{ .Params.role }}<br>{{ .Params.affiliation }}</p>
@@ -11,32 +48,5 @@
       <li><a href="https://scholar.google.com/citations?user={{ .Params.scholar }}">Google Scholar</a></li>
       <li><a href="https://www.linkedin.com/in/{{ .Params.linkedin }}">LinkedIn</a></li>
     </ul>
-  </aside>
-  <section class="main-content">
-    {{ .Content }}
-    <!--include summary of Research and News sections-->
-    {{ with .Site.GetPage "section" "research" }}
-      <section>
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{ .Summary }}
-      </section>
-    {{ end }}
-    {{ with .Site.GetPage "section" "news" }}
-      <section>
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{ $bullets := findRE `(?m)^[-*]\s+.*` .RawContent }}
-        {{ $recentNews := first 6 $bullets }}
-        {{ delimit $recentNews "\n" | markdownify }}
-      </section>
-    {{ end }}
-    <!--
-    {{ range site.RegularPages }}
-      <section>
-        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-        {{ .Summary }}
-      </section>
-    {{ end }}
-    -->
-  </section>
-</div>
+  </div>
 {{ end }}
